@@ -1,6 +1,6 @@
 Name:		texlive-hereapplies
 Version:	64391
-Release:	1
+Release:	2
 Summary:	A LaTeX package for referencing groups of pages that share something in common
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/hereapplies
