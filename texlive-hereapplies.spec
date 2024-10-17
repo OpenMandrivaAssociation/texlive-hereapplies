@@ -3,7 +3,7 @@ Version:	68638
 Release:	1
 Summary:	A LaTeX package for referencing groups of pages that share something in common
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/hereapplies
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/hereapplies
 License:	gpl3+
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/hereapplies.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/hereapplies.doc.r%{version}.tar.xz
