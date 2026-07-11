@@ -1,39 +1,23 @@
-Name:		texlive-hereapplies
-Version:	68638
-Release:	1
+%global tl_name hereapplies
+%global tl_revision 68638
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.0.2
+Release:	%{tl_revision}.1
 Summary:	A LaTeX package for referencing groups of pages that share something in common
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/hereapplies
 License:	gpl3+
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/hereapplies.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/hereapplies.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/hereapplies.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/hereapplies.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-Here Applies is a LaTeX package that allows to collect groups
-of labels and reference them altogether. It can be used for
-creating informal glossaries that cross-link concepts to their
-applications, or simply mentioning multiple pages that share
-something in common.
+Here Applies is a LaTeX package that allows to collect groups of labels
+and reference them altogether. It can be used for creating informal
+glossaries that cross-link concepts to their applications, or simply
+mentioning multiple pages that share something in common.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/hereapplies
-%doc %{_texmfdistdir}/doc/latex/hereapplies
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
